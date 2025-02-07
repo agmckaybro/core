@@ -75,11 +75,6 @@ class RiscoCloudZoneEntity(RiscoCloudEntity):
     def _get_data_from_coordinator(self) -> None:
         self._zone = self.coordinator.data.zones[self._zone_id]
 
-    @property
-    def assumed_state(self) -> bool:
-        """Return whether the state is based on actual reading from device."""
-        return not self.coordinator.data.assumed_control_panel_state
-
 
 class RiscoLocalZoneEntity(Entity):
     """Risco local zone entity base class."""
